@@ -1,3 +1,9 @@
+*For **ENGLISH** readme, click [here](https://github.com/SoyaDokio/edith/blob/main/README_EN.md).*
+
+　
+
+　
+
 ```
 申明
 本项目 fork 自 https://github.com/sunny/edith，中文 README 于2021年8月22日凌晨编写。
