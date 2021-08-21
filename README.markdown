@@ -1,93 +1,104 @@
+```
+申明
+本项目 fork 自 https://github.com/sunny/edith，中文 README 于2021年8月22日凌晨编写。
+SoyaDokio
+2021-08-22
+```
+
 Edith
 =====
 
-A quick small wiki, perfect for pasting quick texts or code and sharing it between friends.
+Edith 是一个敏捷轻量的 Wiki 程序，适合快速分享文本。直观地讲，就是一个没有任何 UI 的在线记事本。
 
-Don't worry about saving, it saves at every key stroke. Think of it as a magic zero-UI Web notepad.
+由于每次编辑都会自动保存，你大可不必担心文本丢失问题。
 
-Try it out at [https://edit.sunfox.org/any-page-name](https://edit.sunfox.org/any-page-name).
+在线尝试：[https://edit.sunfox.org/any-page-name](https://edit.sunfox.org/any-page-name)
 
-Usage
+功能
 -----
 
-- `/any-page-name`: type what you want, it's saved automagically!
-- `/any-page-name.txt`: raw text version.
-- `/any-page-name.html`: HTML version through the
-  [Markdown](https://daringfireball.net/projects/markdown/) syntax.
-- `/any-page-name.remark`: Slideshow version using
-  [Remark](https://github.com/gnab/remark).
-- `/any-page-name.graphviz`: Graph version of the dot syntax using
-  [Viz](https://github.com/mdaines/viz.js/), see
-  [WebGraphViz](http://www.webgraphviz.com/) for examples.
+### 多种模式
 
-Keyboard shortcut `cltr-e` switches from edit mode to HTML mode.
+- `/any-page-name`: 输入任意内容，可自动保存。
+- `/any-page-name.txt`: 纯文本模式。
+- `/any-page-name.html`: 遵循 [Markdown](https://daringfireball.net/projects/markdown/) 语法的 HTML 模式。
+- `/any-page-name.remark`: 遵循 [Remark](https://github.com/gnab/remark) 语法的 Slideshow 模式。
+- `/any-page-name.graphviz`: 遵循 [Viz](https://github.com/mdaines/viz.js/) 语法的 Graph 模式（流程图、思维导图等。示例演示：[WebGraphViz](http://www.webgraphviz.com/)）。
 
-### Favicon
+快捷键 `Ctrl`+`E` 让你可以在编辑模式和 HTML 模式之间随心切换。
 
-![Magic Favicon changing as the page updates](https://sunny.github.io/edith/favicon.gif)
+### 网页图标
 
-The favicon changes as the page updates and is also an indicator that the page
-is currently saving or not.
+![网页图标随网页内容变化而变化](https://sunny.github.io/edith/favicon.gif)
+
+网页图标随网页内容变化而变化，同时也可以通过观察它来判断是否自动保存。
 
 ### REST
 
-Edith is also a RESTful API. So go ahead and try to `PUT` or `DELETE` on these
-URLs.
+Edith 还支持 RESTful 风格的 API，那还等啥？快去试试对 URL 执行 `PUT` 或 `DELETE` 吧。
 
-Install it yourself
--------------------
+### 页面清单
 
-Clone it locally:
+可以访问 `/list` 以显示当前所有页面名称及其后缀格式。
+
+```
+注：
+不建议公开使用，请注意保护个人隐私。
+```
+
+如何配置一个属于你自己的 Edith
+-----
+
+1.使用 Clone 命令将远程代码克隆到本地：
 
 ```sh
 $ git clone https://github.com/sunny/edith.git
 $ cd edith
 ```
 
-### Using Docker
+### 方式一：使用 Docker
 
-Build the image:
+2.创建镜像：
 
 ```sh
 $ docker build . -t edith
 ```
 
-Run it:
+3.启动镜像：
 
 ```sh
 $ docker run --rm -p 8888:80 edith
 ```
 
-Now you can access Edith from http://localhost:8888/
+然后你就可以通过 [http://localhost:8888/](http://localhost:8888/) 访问 Edith 了。
 
-### Using a local web server
+### 方式二：使用本地 Web服务器
 
-Make the `data` directory writable:
+2.给文件夹 `data` 添加**写**权限：
 
 ```sh
 $ chmod a+w data
 ```
 
-Run it with a web server that interprents PHP and points all 404s
-to `index.php`:
+3.使用支持 PHP 的 Web服务器运行它，并将所有 404 指向 `index.php`：
 
-- PHP's built-in server for development:
+- PHP 内建服务器
 
   ```sh
   $ php -S localhost:8888 index.php
   ```
 
-- Apache:
+- Apache 服务器
 
-  You can use the example htaccess.
+  你可以使用给定的 .htaccess 样例文件。
 
   ```sh
   $ cp htaccess.example .htaccess
   ```
 
-- nginx:
+- Nginx 服务器
 
-  Add the following directive to your nginx configuration:
+  添加下列指令到你的 Nginx 配置中：
 
   ```
   try_files $uri $uri/ @rewrites;
@@ -96,52 +107,56 @@ to `index.php`:
   }
   ```
 
-### Further use
+进阶功能
+-----
 
-This section is only for ninjas and such.
+```
+注：
+尝试下列操作时，请确认知道你自己在干啥，否则啥也别干。
+```
 
-#### Configuration
+### 自定义配置
 
-Copy `config.example.php` to `config.php` and read the examples to use your own
-configuration file.
+参考 `config.example.php` 内容，并改为适合你使用的版本，重命名为 `config.php` 。
 
-#### Concurrent Access
+### 并发访问
 
-Multiple users can see live changes at the same time and not overwrite each
-other's text. For that you must first install
-[Google Mobwrite](https://code.google.com/archive/p/google-mobwrite/) on a
-server and define your endpoint in `config.php`.
+多人同时在线编辑，内容实时同步，而不必担心自己的变更内容被他人覆盖。
 
-#### Read-only pages
+使用此功能必须安装 [Google Mobwrite](https://code.google.com/archive/p/google-mobwrite/) 到某个服务器，并在 `config.php` 中定义你的端点。
 
-To make pages read-only, just make them non-writable on disk:
+### 页面只读
+
+只需删除文件的**写**权限，即可使对应页面只读：
 
 ```sh
 $ chmod -w data/foo.txt
 ```
 
-They will then be shown using the HTML representation through Markdown instead.
-This is what is used on [edit.sunfox.org](https://edit.sunfox.org/)'s homepage.
+只读页面将被显示为 HTML ，页面内容编写时请遵循 [Markdown](https://daringfireball.net/projects/markdown/) 语法，否则只能原样输出。
 
-To deactivate the creation of new pages, make the `data` directory itself
-non-writable.
+[edit.sunfox.org](https://edit.sunfox.org/) 的主页用的就是这个功能。
 
-#### URLs
+要禁止创建新页面的话，删除文件夹 `data` 的**写**权限即可。
 
-You may use any file name you like as long as it doesn't end like a
-representation (`.txt` or `.html`).
+### URLs
 
+你可以使用除 `.txt` 和 `.html` 结尾的任意字符串作为文件名。
+
+```
 If you prefer `/page.js/txt` URLs instead of `/page.js.txt`, the config file
 has a setting for you.
+未经确认的翻译：
+多级文件夹
+如果你输入 /page.js.txt 时表达的意思是创建一个名为 page.js 的文件夹，并在其内创建文件 txt，那么恭喜你，配置文件有为你准备此功能的开关。
+```
 
-Contributing
-------------
+共同开发
+-----
 
-You are welcome to contribute by adding issues and
-[forking the code on GitHub](https://github.com/sunny/edith).
+欢迎各位志同道合的朋友共同开发本项目。有意请通过 Issues 给我提意见，或者直接 Fork [本项目](https://github.com/sunny/edith)以创建属于你的分支。
 
-Licence
--------
+许可协议
+-----
 
-Edith is released under the
-[MIT License](https://opensource.org/licenses/MIT).
+Edith 遵循麻省理工学院的开源协议 [MIT License](https://opensource.org/licenses/MIT) 而发布。
