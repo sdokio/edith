@@ -1,0 +1,25 @@
+  
+<body style="background-color: #f6f6f6;font-family: Verdana, 'Bitstream Vera Sans', sans-serif;background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAH0lEQVQIW2NgYODjBWJWKOZgQOKwQDAKByLAgSTACQAp6QE8mK8aTgAAAABJRU5ErkJggg==');">
+    <h1>Edith</h1>
+    <p>A quick small wiki, perfect for pasting quick texts or code and sharing it between friends.</p>
+    <p>Don't worry about saving, it saves at every key stroke. Think of it as a magic zero-UI Web notepad.</p>
+    <p>Try it out at <a href="https://edit.sunfox.org/any-page-name" rel="nofollow">https://edit.sunfox.org/{any-page-name}</a>.</p>
+    <h3 style="margin-top: 30px;margin-bottom: 0px;">Usage</h3>
+    ●&nbsp;<code style="color: white;background-color: #f8bb22;padding: 1px 4px;border: solid 1px #edb015;border-radius: 5px;">/any-page-name</code>
+    <div style="margin-top: 10px;">&nbsp;&nbsp;&nbsp;type what you want, it's saved automagically!</div>
+    ●&nbsp;<code style="color: white;background-color: #f8bb22;padding: 1px 4px;border: solid 1px #edb015;border-radius: 5px;">/any-page-name.txt</code>
+    <div style="margin-top: 10px;">&nbsp;&nbsp;&nbsp;raw text version.</div>
+    ●&nbsp;<code style="color: white;background-color: #f8bb22;padding: 1px 4px;border: solid 1px #edb015;border-radius: 5px;">/any-page-name.html</code>
+    <div style="margin-top: 10px;">&nbsp;&nbsp;&nbsp;HTML version through the <a href="http://daringfireball.net/projects/markdown/" rel="nofollow">Markdown</a> syntax.</div>
+    ●&nbsp;<code style="color: white;background-color: #f8bb22;padding: 1px 4px;border: solid 1px #edb015;border-radius: 5px;">/any-page-name.remark</code>
+    <div style="margin-top: 10px;">&nbsp;&nbsp;&nbsp;Slideshow version using <a href="https://github.com/gnab/remark">Remark</a>.</div>
+    ●&nbsp;<code style="color: white;background-color: #f8bb22;padding: 1px 4px;border: solid 1px #edb015;border-radius: 5px;">/any-page-name.graphviz</code>
+    <div style="margin-top: 10px;">&nbsp;&nbsp;&nbsp;Graph version of the dot syntax using <a href="https://github.com/mdaines/viz.js/">Viz</a>, see <a href="http://www.webgraphviz.com/" rel="nofollow">WebGraphViz</a> for examples.</div>
+    <p>Keyboard shortcut <code style="background-color: #ccc;padding: 1px 4px;border: solid 1px #aaa;border-radius: 5px;">Ctrl</code> + <code style="background-color: #ccc;padding: 1px 4px;border: solid 1px #aaa;border-radius: 5px;">E</code> switches from edit mode to HTML mode.</p>
+    <h3 style="margin-top: 30px;margin-bottom: -20px;">Favicon</h3>
+    <p>The favicon changes as the page updates and is also an indicator that the page is currently saving or not.
+    </p>
+    <h3 style="margin-top: 30px;margin-bottom: -20px;">REST</h3>
+    <p>Edith is also a RESTful API. So go ahead and try to <code style="background-color: #ccc;padding: 1px 4px;border: solid 1px #aaa;border-radius: 5px;">PUT</code> or <code style="background-color: #ccc;padding: 1px 4px;border: solid 1px #aaa;border-radius: 5px;">DELETE</code> on these URLs.
+    </p>
+</body>
