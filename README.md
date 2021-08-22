@@ -1,4 +1,4 @@
-*For **ENGLISH** readme, click [here](https://github.com/SoyaDokio/edith/blob/main/README_EN.md).*
+*For **ENGLISH** readme, click [here](https://github.com/SoyaDokio/edith/blob/main/README_en.md).*
 
 　
 
