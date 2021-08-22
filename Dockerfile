@@ -14,3 +14,7 @@ COPY lib /app/lib
 COPY public /app/public
 COPY templates /app/templates
 RUN mkdir /app/data && chmod a+w /app/data
+
+# 设定时区
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
