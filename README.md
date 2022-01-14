@@ -157,6 +157,14 @@ has a setting for you.
 如果你输入 /page.js.txt 时表达的意思是创建一个名为 page.js 的文件夹，并在其内创建文件 txt，那么恭喜你，配置文件有为你准备此功能的开关。
 ```
 
+### 页面清单
+如果创建页面过多以致记忆不清，又不考虑隐私问题，可以考虑使用一个专有页面来列出所有的页面文件，那么 [list_all_pages.sh](https://github.com/sdokio/edith/blob/main/list_all_pages.sh) 便是为你准备的。
+用法：
+```sh
+$ bash list_all_pages.sh
+```
+注：重启失效，需要重新执行。
+
 共同开发
 -----
 
