@@ -1,3 +1,6 @@
+# 参考1: https://blog.mafeifan.com/DevOps/GithubActions/Docker%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F%E5%92%8C%E6%8E%A8%E9%80%81%E5%88%B0docker-hub.html
+# 参考2: https://docs.docker.com/ci-cd/github-actions/
+
 name: CI to Docker Hub 
 
 on:
